@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
+        <description>Allow write for records in x_2224486_meetin_0_calendar_day, for users with role x_2224486_meetin_0.admin.</description>
+        <local_or_existing>Existing</local_or_existing>
+        <name>x_2224486_meetin_0_calendar_day</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>akeah_diez</sys_created_by>
+        <sys_created_on>2026-11-17 16:33:42</sys_created_on>
+        <sys_id>4cfe5726c32c13103729daec050131d5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_2224486_meetin_0_calendar_day</sys_name>
+        <sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope>
+        <sys_update_name>sys_security_acl_4cfe5726c32c13103729daec050131d5</sys_update_name>
+        <sys_updated_by>akeah_diez</sys_updated_by>
+        <sys_updated_on>2026-11-17 16:33:42</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>
