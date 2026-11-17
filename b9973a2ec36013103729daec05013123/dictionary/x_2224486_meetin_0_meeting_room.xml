@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="2b80972ac3a813103729daec050131d7" label="Meeting Room" max_length="40" name="x_2224486_meetin_0_meeting_room" type="collection">
+        <element label="TV Conference" max_length="40" name="tv_conference" type="boolean"/>
+        <element label="White Board and Markers" max_length="40" name="white_board_and_markers" type="boolean"/>
+        <element choice="1" label="Accessibility" mandatory="true" max_length="40" name="accessibility" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Discussion Room" sequence="2" value="discussion_room"/>
+                <element inactive_on_update="false" label="Client Reception" sequence="0" value="client_reception"/>
+                <element inactive_on_update="false" label="Any" sequence="1" value="any"/>
+            </choice>
+        </element>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Seating Capacity" mandatory="true" max_length="40" name="seating_capacity" type="string"/>
+        <element label="Projector" max_length="40" name="projector" type="boolean"/>
+    </element>
+</database>

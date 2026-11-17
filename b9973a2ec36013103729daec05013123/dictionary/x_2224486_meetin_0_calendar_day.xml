@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="e6ee1726c32c13103729daec05013132" label="Calendar Day" max_length="40" name="x_2224486_meetin_0_calendar_day" type="collection">
+        <element label="Calendar Date" mandatory="true" max_length="40" name="calendar_date" type="glide_date"/>
+        <element label="Description" max_length="40" name="description" type="string"/>
+        <element choice="1" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Holiday" sequence="1" value="holiday"/>
+                <element inactive_on_update="false" label="Business Day" sequence="0" value="business_day"/>
+            </choice>
+        </element>
+    </element>
+</database>

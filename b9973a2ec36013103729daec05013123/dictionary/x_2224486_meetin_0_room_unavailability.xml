@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="3a8c9beec3e813103729daec0501310e" label="Room Unavailability" max_length="40" name="x_2224486_meetin_0_room_unavailability" type="collection">
+        <element label="Reason" max_length="40" name="reason" type="string"/>
+        <element label="Unavailable From" mandatory="true" max_length="40" name="unavailable_from" type="glide_date_time"/>
+        <element label="Meeting Room" mandatory="true" max_length="32" name="meeting_room" reference="x_2224486_meetin_0_meeting_room" type="reference"/>
+        <element label="Unavailable To" mandatory="true" max_length="40" name="unavailable_to" type="glide_date_time"/>
+        <index name="index">
+            <element name="meeting_room"/>
+        </index>
+    </element>
+</database>

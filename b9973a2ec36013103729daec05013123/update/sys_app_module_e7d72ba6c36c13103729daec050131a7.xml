@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Meeting Rooms">ae8adbeac3e813103729daec050131eb</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <karuna_route/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>closer closer closer to me</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_2224486_meetin_0_meeting_room</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles/>
+        <route/>
+        <screen/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>justine_lequigan</sys_created_by>
+        <sys_created_on>2026-11-17 17:13:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e7d72ba6c36c13103729daec050131a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>closer closer closer to me</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope>
+        <sys_update_name>sys_app_module_e7d72ba6c36c13103729daec050131a7</sys_update_name>
+        <sys_updated_by>justine_lequigan</sys_updated_by>
+        <sys_updated_on>2026-11-17 17:13:12</sys_updated_on>
+        <timeline_page/>
+        <title>closer closer closer to me</title>
+        <uncancelable>false</uncancelable>
+        <ux_list/>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>
