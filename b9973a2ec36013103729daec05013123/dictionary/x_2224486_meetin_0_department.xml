@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="6447e94fc3e4d3103729daec05013127" label="Department" max_length="40" name="x_2224486_meetin_0_department" type="collection">
+        <element label="Members" max_length="4000" name="members" reference="sys_user" type="glide_list"/>
+        <element label="Department Head" max_length="32" name="department_head" reference="sys_user" type="reference"/>
+        <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <index name="index">
+            <element name="department_head"/>
+        </index>
+    </element>
+</database>

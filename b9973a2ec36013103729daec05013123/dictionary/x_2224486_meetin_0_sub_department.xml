@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="4ccbed47c328d3103729daec0501312a" label="Sub Department" max_length="40" name="x_2224486_meetin_0_sub_department" type="collection">
+        <element label="Parent Department" mandatory="true" max_length="32" name="parent_department" reference="x_2224486_meetin_0_department" type="reference"/>
+        <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element label="Members" max_length="4000" name="members" reference="sys_user" type="glide_list"/>
+        <element label="Subdepartment Head" max_length="32" name="subdepartment_head" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="parent_department"/>
+        </index>
+        <index name="index2">
+            <element name="subdepartment_head"/>
+        </index>
+    </element>
+</database>
