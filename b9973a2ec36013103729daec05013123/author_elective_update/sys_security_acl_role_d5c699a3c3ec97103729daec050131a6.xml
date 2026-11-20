@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>zachh_bacolod</sys_created_by>
+        <sys_created_on>2026-11-20 09:12:41</sys_created_on>
+        <sys_id>d5c699a3c3ec97103729daec050131a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2224486_meetin_0_scheduled_meetin.x_2224486_meetin_0.moderator</sys_name>
+        <sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope>
+        <sys_security_acl display_value="x_2224486_meetin_0_scheduled_meetin">d5c699a3c3ec97103729daec05013198</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_d5c699a3c3ec97103729daec050131a6</sys_update_name>
+        <sys_updated_by>zachh_bacolod</sys_updated_by>
+        <sys_updated_on>2026-11-20 09:12:41</sys_updated_on>
+        <sys_user_role display_value="x_2224486_meetin_0.moderator" name="x_2224486_meetin_0.moderator">95a8b2eec36013103729daec0501319c</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</application>
+        <file_path/>
+        <instance_id>0f571d16dbb2bdd039639027c59619c0</instance_id>
+        <instance_name>dev230618</instance_name>
+        <name>sys_security_acl_role_d5c699a3c3ec97103729daec050131a6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>zachh_bacolod</sys_created_by><sys_created_on>2026-11-20 09:12:41</sys_created_on><sys_id>d5c699a3c3ec97103729daec050131a6</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2224486_meetin_0_scheduled_meetin.x_2224486_meetin_0.moderator</sys_name><sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package><sys_policy/><sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope><sys_security_acl display_value="x_2224486_meetin_0_scheduled_meetin">d5c699a3c3ec97103729daec05013198</sys_security_acl><sys_update_name>sys_security_acl_role_d5c699a3c3ec97103729daec050131a6</sys_update_name><sys_updated_by>zachh_bacolod</sys_updated_by><sys_updated_on>2026-11-20 09:12:41</sys_updated_on><sys_user_role display_value="x_2224486_meetin_0.moderator" name="x_2224486_meetin_0.moderator">95a8b2eec36013103729daec0501319c</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1060408397</payload_hash>
+        <record_name>x_2224486_meetin_0_scheduled_meetin.x_2224486_meetin_0.moderator</record_name>
+        <reverted_from/>
+        <source>613836aec36013103729daec050131d1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>zachh_bacolod</sys_created_by>
+        <sys_created_on>2026-11-20 09:12:41</sys_created_on>
+        <sys_id>1dc699a3c3ec97103729daec050131c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f83abe980000001</sys_recorded_at>
+        <sys_updated_by>zachh_bacolod</sys_updated_by>
+        <sys_updated_on>2026-11-20 09:12:41</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>99c699a3fdec9710d86997dea63449bf</update_guid>
+        <update_guid_history>99c699a3fdec9710d86997dea63449bf:-1060408397</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_2224486_meetin_0_scheduled_meetin.x_2224486_meetin_0.moderator">74f9992bc3ec97103729daec0501319d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>zachh_bacolod</sys_created_by>
+        <sys_created_on>2026-11-20 09:26:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>0d5f71d6c0a24b1a81e4cd6aff1638e4</sys_id>
+        <sys_metadata>d5c699a3c3ec97103729daec050131a6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2224486_meetin_0_scheduled_meetin.x_2224486_meetin_0.moderator</sys_name>
+        <sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package>
+        <sys_parent display_value="">d5c699a3c3ec97103729daec05013198</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope>
+        <sys_scope_delete display_value="">3414547f80c542bc8b176d56d9c3de44</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_d5c699a3c3ec97103729daec050131a6</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_d5c699a3c3ec97103729daec050131a6">1dc699a3c3ec97103729daec050131c0</sys_update_version>
+        <sys_updated_by>zachh_bacolod</sys_updated_by>
+        <sys_updated_on>2026-11-20 09:26:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
