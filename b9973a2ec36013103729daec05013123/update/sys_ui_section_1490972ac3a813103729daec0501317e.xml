@@ -1,5 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="1490972ac3a813103729daec0501317e" sys_domain="global" table="x_2224486_meetin_0_meeting_room" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>e73f9ae7c3e4d7103729daec0501316d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>1</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>a33f9ae7c3e4d7103729daec0501316e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>tv_conference</element>
+            <position>2</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>6f3f9ae7c3e4d7103729daec0501316e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>white_board_and_markers</element>
+            <position>3</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>2b3f9ae7c3e4d7103729daec0501316f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>ab3f9ae7c3e4d7103729daec0501317c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>accessibility</element>
+            <position>5</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>673f9ae7c3e4d7103729daec0501317d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>seating_capacity</element>
+            <position>6</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>233f9ae7c3e4d7103729daec0501317e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>projector</element>
+            <position>7</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>eb3f9ae7c3e4d7103729daec0501317e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>8</position>
+            <sys_created_by>test.moderator</sys_created_by>
+            <sys_created_on>2026-11-20 14:29:20</sys_created_on>
+            <sys_id>a73f9ae7c3e4d7103729daec0501317f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2224486_meetin_0_meeting_room" sys_domain="global" view="Default view">1490972ac3a813103729daec0501317e</sys_ui_section>
+            <sys_updated_by>test.moderator</sys_updated_by>
+            <sys_updated_on>2026-11-20 14:29:20</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>
