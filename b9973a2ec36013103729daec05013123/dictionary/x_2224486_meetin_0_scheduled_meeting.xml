@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="ccd789a3c36c97103729daec05013104" label="Scheduled Meeting" max_length="40" name="x_2224486_meetin_0_scheduled_meeting" type="collection">
+        <element label="Applicant" mandatory="true" max_length="32" name="applicant" reference="sys_user" type="reference"/>
+        <element choice="3" default="scheduled" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="scheduled" sequence="0" value="scheduled"/>
+                <element inactive_on_update="false" label="cancelled" sequence="1" value="cancelled"/>
+                <element inactive_on_update="false" label="closed" sequence="2" value="closed"/>
+            </choice>
+        </element>
+        <element label="Main Presenter" mandatory="true" max_length="32" name="main_presenter" reference="sys_user" type="reference"/>
+        <element label="End Time" mandatory="true" max_length="40" name="end_time" type="glide_date_time"/>
+        <element display="true" label="agenda" mandatory="true" max_length="40" name="agenda" type="string"/>
+        <element default="javascript:gs.getUserID()" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Attendees" max_length="1024" name="attendees" reference="sys_user" type="glide_list" use_dynamic_default="true"/>
+        <element label="Department" max_length="32" name="department" reference="cmn_department" type="reference"/>
+        <element label="Meeting Room" mandatory="true" max_length="32" name="meeting_room" reference="x_2224486_meetin_0_meeting_room" type="reference"/>
+        <element label="Start Time" mandatory="true" max_length="40" name="start_time" type="glide_date_time"/>
+        <index name="index">
+            <element name="applicant"/>
+        </index>
+        <index name="index2">
+            <element name="department"/>
+        </index>
+        <index name="index3">
+            <element name="main_presenter"/>
+        </index>
+        <index name="index4">
+            <element name="meeting_room"/>
+        </index>
+    </element>
+</database>

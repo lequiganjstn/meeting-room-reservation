@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_2224486_meetin_0.MeetingRuleChecker</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>MeetingRuleChecker</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var MeetingRuleChecker = Class.create();
+MeetingRuleChecker.prototype = {
+  initialize: function() { this.P = gs.getCurrentScopeName(); },
+
+  // Returns '' when OK. Returns a message when the booking is not allowed.
+  check: function(roomId, startVal, endVal, ignoreId) {
+    var s = new GlideDateTime(startVal);
+    var e = new GlideDateTime(endVal);
+    if (!e.after(s)) return 'The end time must be after the start time.';
+
+    var day = s.getLocalDate().getValue();
+    if (day != e.getLocalDate().getValue())
+      return 'A meeting must start and end on the same day.';
+
+    var h = new GlideRecord(this.P + '_calendar_day');
+    h.addQuery('calendar_date', day);
+    h.addQuery('type', 'holiday');
+    h.setLimit(1); h.query();
+    if (h.hasNext()) return 'Rooms cannot be booked on a holiday.';
+
+    var b = new GlideRecord(this.P + '_calendar_day');
+    b.addQuery('calendar_date', day);
+    b.addQuery('type', 'business_day');
+    b.setLimit(1); b.query();
+    if (!b.hasNext()) return 'Rooms can only be booked on business days.';
+
+    var u = new GlideRecord(this.P + '_room_unavailability');
+    u.addQuery('meeting_room', roomId);
+    u.addQuery('unavailable_from', '<', e.getValue());
+    u.addQuery('unavailable_to', '>', s.getValue());
+    u.setLimit(1); u.query();
+    if (u.hasNext()) return 'This room is not available at that time.';
+
+    var m = new GlideRecord(this.P + '_scheduled_meeting');
+    m.addQuery('meeting_room', roomId);
+    m.addQuery('state', 'scheduled');
+    m.addQuery('start_time', '<', e.getValue());
+    m.addQuery('end_time', '>', s.getValue());
+    if (ignoreId) m.addQuery('sys_id', '!=', ignoreId);
+    m.setLimit(1); m.query();
+    if (m.hasNext()) return 'This room is already booked at that time.';
+
+    var room = new GlideRecord(this.P + '_meeting_room');
+    if (room.get(roomId) && room.getValue('accessibility') == 'client_reception') {
+      var ms = e.getNumericValue() - s.getNumericValue();
+      if (ms > 3 * 60 * 60 * 1000)
+        return 'Client reception rooms cannot be booked for more than 3 hours.';
+    }
+    return '';
+  },
+  type: 'MeetingRuleChecker'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>zachh_bacolod</sys_created_by>
+        <sys_created_on>2026-11-20 09:51:59</sys_created_on>
+        <sys_id>e08f1527c320d7103729daec05013147</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MeetingRuleChecker</sys_name>
+        <sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope>
+        <sys_update_name>sys_script_include_e08f1527c320d7103729daec05013147</sys_update_name>
+        <sys_updated_by>zachh_bacolod</sys_updated_by>
+        <sys_updated_on>2026-11-20 09:51:59</sys_updated_on>
+    </sys_script_include>
+</record_update>
