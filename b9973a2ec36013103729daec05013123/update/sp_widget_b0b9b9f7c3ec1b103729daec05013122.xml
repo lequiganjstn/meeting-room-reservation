@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+  var c = this;
+  c.m = {};
+  c.presenter = {};
+  c.attendees = {};
+  c.error = '';
+  c.done = false;
+  c.blocked = false;
+
+  if (c.data.blocked) {
+    // Trying to edit someone else's (or a non-active) reservation
+    c.error = c.data.error;
+    c.blocked = true;
+  } else if (c.data.edit) {
+    // Update mode: pre-fill the form (the server sends times in UTC)
+    var e = c.data.edit;
+    c.m.agenda = e.agenda;
+    c.m.room = e.room;
+    c.m.dept = e.dept;
+    c.m.start = new Date(e.start.replace(' ', 'T') + 'Z');
+    c.m.end = new Date(e.end.replace(' ', 'T') + 'Z');
+    c.presenter = e.presenter;
+    c.attendees = e.attendees;
+  }
+
+  c.save = function() {
+    c.error = '';
+    c.done = false;
+    if (!c.m.start || !c.m.end) {
+      c.error = 'Please choose a start and end time.';
+      return;
+    }
+    c.server.get({
+      action: 'save',
+      m: {
+        editId: c.data.editId || '',   // the fix: the client sends the record id itself
+        agenda: c.m.agenda,
+        room: c.m.room,
+        dept: c.m.dept,
+        presenter: c.presenter.value,
+        attendees: c.attendees.value,
+        start: c.m.start.toISOString(),
+        end: c.m.end.toISOString()
+      }
+    }).then(function(r) {
+      if (r.data.error) c.error = r.data.error;
+      else c.done = true;
+    });
+  };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mrrs_book_meeting</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>MRRS Book Meeting</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var P = gs.getCurrentScopeName();
+  var me = gs.getUserID();
+
+  // Dropdown lists
+  data.rooms = [];
+  data.depts = [];
+  var r = new GlideRecord(P + '_meeting_room'); r.orderBy('name'); r.query();
+  while (r.next()) data.rooms.push({sys_id: r.getUniqueValue(), name: r.getValue('name')});
+  var d = new GlideRecord(P + '_department'); d.orderBy('name'); d.query();
+  while (d.next()) data.depts.push({sys_id: d.getUniqueValue(), name: d.getValue('name')});
+
+  // Are we updating an existing reservation?
+  // $sp.getParameter only works on the first load; on Save the client sends the id.
+  var editId = (input && input.m) ? (input.m.editId || '') : ($sp.getParameter('sys_id') || '');
+  data.editId = '';
+
+  if (editId) {
+    var ex = new GlideRecord(P + '_scheduled_meeting');
+    if (ex.get(editId) && ex.getValue('applicant') == me && ex.getValue('state') == 'scheduled') {
+      data.editId = editId;
+      data.edit = {
+        agenda: ex.getValue('agenda'),
+        room: ex.getValue('meeting_room'),
+        dept: ex.getValue('department'),
+        presenter: {value: ex.getValue('main_presenter'), displayValue: ex.getDisplayValue('main_presenter'), name: 'presenter'},
+        attendees: {value: ex.getValue('attendees'), displayValue: ex.getDisplayValue('attendees'), name: 'attendees'},
+        start: ex.getValue('start_time'),
+        end: ex.getValue('end_time')
+      };
+    } else {
+      data.error = 'You can only update your own active reservations.';
+      data.blocked = true;
+      return;
+    }
+  }
+
+  // Save (insert or update)
+  if (input && input.action == 'save') {
+    var m = input.m;
+    if (!m.agenda || !m.room || !m.presenter || !m.start || !m.end) {
+      data.error = 'Please fill in the Agenda, Meeting Room, Main Presenter, Start and End.';
+      return;
+    }
+
+    var s = new GlideDateTime();
+    s.setValue(m.start.replace('T', ' ').substring(0, 19));
+    var e = new GlideDateTime();
+    e.setValue(m.end.replace('T', ' ').substring(0, 19));
+
+    // Zach's rule checker. The last argument lets an update ignore its own old booking.
+    var msg = new MeetingRuleChecker().check(m.room, s.getValue(), e.getValue(), data.editId);
+    if (msg) { data.error = msg; return; }
+
+    var g = new GlideRecord(P + '_scheduled_meeting');
+    if (data.editId) {
+      g.get(data.editId);
+    } else {
+      g.initialize();
+      g.setValue('applicant', me);
+    }
+    g.setValue('agenda', m.agenda);
+    g.setValue('meeting_room', m.room);
+    g.setValue('main_presenter', m.presenter);
+    g.setValue('attendees', m.attendees || '');
+    g.setValue('department', m.dept || '');
+    g.setValue('start_time', s.getValue());
+    g.setValue('end_time', e.getValue());
+
+    if (data.editId) g.update(); else g.insert();
+  }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>mauris_samson</sys_created_by>
+        <sys_created_on>2026-11-21 06:23:46</sys_created_on>
+        <sys_id>b0b9b9f7c3ec1b103729daec05013122</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>MRRS Book Meeting</sys_name>
+        <sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope>
+        <sys_update_name>sp_widget_b0b9b9f7c3ec1b103729daec05013122</sys_update_name>
+        <sys_updated_by>mauris_samson</sys_updated_by>
+        <sys_updated_on>2026-11-21 06:26:19</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{c.data.editId ? 'Update Meeting' : 'Book a Meeting'}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-danger" ng-if="c.error">{{c.error}}</div>
+    <div class="alert alert-success" ng-if="c.done">Your meeting is saved.</div>
+
+    <div ng-if="!c.blocked">
+      <label>Agenda</label>
+      <input class="form-control" ng-model="c.m.agenda">
+
+      <label>Meeting Room</label>
+      <select class="form-control" ng-model="c.m.room"
+              ng-options="r.sys_id as r.name for r in c.data.rooms">
+        <option value="">-- Select a room --</option>
+      </select>
+
+      <label>Main Presenter</label>
+      <sn-record-picker field="c.presenter" table="'sys_user'"
+         display-field="'name'" value-field="'sys_id'" search-fields="'name'"></sn-record-picker>
+
+      <label>Attendees</label>
+      <sn-record-picker field="c.attendees" table="'sys_user'" multiple="true"
+         display-field="'name'" value-field="'sys_id'" search-fields="'name'"></sn-record-picker>
+
+      <label>Department</label>
+      <select class="form-control" ng-model="c.m.dept"
+              ng-options="d.sys_id as d.name for d in c.data.depts">
+        <option value="">-- Select a department --</option>
+      </select>
+
+      <label>Start</label>
+      <input type="datetime-local" class="form-control" ng-model="c.m.start">
+      <label>End</label>
+      <input type="datetime-local" class="form-control" ng-model="c.m.end">
+
+      <button class="btn btn-primary" style="margin-top:15px;" ng-click="c.save()">
+        {{c.data.editId ? 'Update' : 'Save'}}
+      </button>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b0b9b9f7c3ec1b103729daec05013122</id>
+        <sys_created_by>mauris_samson</sys_created_by>
+        <sys_created_on>2026-11-21 06:23:47</sys_created_on>
+        <sys_id>bcb9b9f7c3ec1b103729daec05013126</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>mauris_samson</sys_updated_by>
+        <sys_updated_on>2026-11-21 06:23:47</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

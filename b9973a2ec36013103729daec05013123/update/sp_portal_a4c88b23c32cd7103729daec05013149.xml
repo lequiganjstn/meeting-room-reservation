@@ -28,19 +28,19 @@
         <search_application/>
         <search_results_configuration/>
         <sp_chat_queue/>
-        <sp_rectangle_menu/>
+        <sp_rectangle_menu display_value="MRRS Menu">878fa137c3ac1b103729daec05013104</sp_rectangle_menu>
         <sys_class_name>sp_portal</sys_class_name>
         <sys_created_by>mauris_samson</sys_created_by>
         <sys_created_on>2026-11-20 17:43:29</sys_created_on>
         <sys_id>a4c88b23c32cd7103729daec05013149</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Meeting Room Reservation</sys_name>
         <sys_package display_value="Meeting Room Reservation" source="x_2224486_meetin_0">b9973a2ec36013103729daec05013123</sys_package>
         <sys_policy/>
         <sys_scope display_value="Meeting Room Reservation">b9973a2ec36013103729daec05013123</sys_scope>
         <sys_update_name>sp_portal_a4c88b23c32cd7103729daec05013149</sys_update_name>
         <sys_updated_by>mauris_samson</sys_updated_by>
-        <sys_updated_on>2026-11-20 18:21:16</sys_updated_on>
+        <sys_updated_on>2026-11-21 06:02:42</sys_updated_on>
         <theme display_value="Stock">79315153cb33310000f8d856634c9c4b</theme>
         <title>Meeting Room Reservation</title>
         <ts_index_group/>
